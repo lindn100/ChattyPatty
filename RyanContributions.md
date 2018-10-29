@@ -1,1 +1,1 @@
-
+(10.29) Added usernames to the ChatClient.java file. This will help user's separate their own messages from others, as well as let ChattyPatty directly address a user by using .split on their messages. Passes check style. 
