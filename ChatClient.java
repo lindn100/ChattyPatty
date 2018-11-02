@@ -60,7 +60,7 @@ public class ChatClient {
         serverOutput.writeBytes(data + "\n");
 
         // If user types goodbye chat ends
-        String[] checkForGoodbye = data.split("",2);
+        String[] checkForGoodbye = data.split(" ",2);
         if (checkForGoodbye[1] == "goodbye" || checkForGoodbye[1] == "Goodbye"
             || checkForGoodbye[1] == "GOODBYE") {
           System.out.println("** EXITING APPLICATION **");
