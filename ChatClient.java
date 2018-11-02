@@ -64,7 +64,7 @@ public class ChatClient {
         if (checkForGoodbye[1].equals(" goodbye") || checkForGoodbye[1].equals(" Goodbye")
             || checkForGoodbye[1].equals(" GOODBYE")) {
           System.out.println("** EXITING APPLICATION **");
-          System.exit();
+          System.exit(0);
         }
       }
     } catch (IOException e) {
