@@ -61,11 +61,12 @@ public class ChatClient {
 
         // If user types goodbye chat ends
         String[] checkForGoodbye = data.split("",2);
-        if (checkForGoodbye[1] == "goodbye" || checkForGoodbye[1] == "Goodbye" || checkForGoodbye[1] == "GOODBYE") {
-        System.out.println("** EXITING APPLICATION **");
-        break;
+        if (checkForGoodbye[1] == "goodbye" || checkForGoodbye[1] == "Goodbye"
+            || checkForGoodbye[1] == "GOODBYE") {
+          System.out.println("** EXITING APPLICATION **");
+          break;
+        }
       }
-    }
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
