@@ -60,11 +60,11 @@ public class ChatClient {
         serverOutput.writeBytes(data + "\n");
 
         // If user types goodbye chat ends
-        String[] checkForGoodbye = data.split(" ",2);
-        if (checkForGoodbye[1].equals("goodbye") || checkForGoodbye[1].equals("Goodbye")
-            || checkForGoodbye[1].equals("GOODBYE")) {
+        String[] checkForGoodbye = data.split(":",2);
+        if (checkForGoodbye[1].equals(" goodbye") || checkForGoodbye[1].equals(" Goodbye")
+            || checkForGoodbye[1].equals(" GOODBYE")) {
           System.out.println("** EXITING APPLICATION **");
-          break;
+          System.exit();
         }
       }
     } catch (IOException e) {
