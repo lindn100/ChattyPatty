@@ -8,7 +8,7 @@
  * Anything sent to the server is broadcast to all clients.
  *
  * The ChatClient uses a ClientListener whose code is in a separate file.
- * The ClientListener runs in a separate thread, recieves messages form the server,
+ * The ClientListener runs in a separate thread, receives messages form the server,
  * and displays them on the screen.
  *
  * Data received is sent to the output screen, so it is possible that as
@@ -58,10 +58,10 @@ public class ChatClient {
       while (true) {
         String data = userName + ": " + keyboard.nextLine();
         serverOutput.writeBytes(data + "\n");
-        
+
         // If user types goodbye chat ends
         String[] CheckForGoodbye = data.split("",2);
-        if(checkForGoodbye[1] == 'goodbye' || checkForGoodbye[1] == 'Goodbye' || checkForGoodbye[1] == 'GOODBYE' ) {
+        if(checkForGoodbye[1] == "goodbye" || checkForGoodbye[1] == "Goodbye" || checkForGoodbye[1] == "GOODBYE") {
         System.out.println("** EXITING APPLICATION **");
         break;
       }
