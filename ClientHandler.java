@@ -15,6 +15,7 @@ import java.net.Socket;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 
 public class ClientHandler implements Runnable {
@@ -51,12 +52,17 @@ public class ClientHandler implements Runnable {
               clientOutput = new DataOutputStream(s.getOutputStream());
               clientOutput.writeBytes(clientText + "\n");
             }
+            // Generate a random nuber between 0 and 1
+            Random generator = new Random();
+            double number = generator.nextDouble() * 1;
+            // If random number is gretaer than 0.05 execute the Bot code
+            if (number >= 0.05) {
             String[] messageToBot = clientText.split(":", 2);
             messageToBot[1] = messageToBot[1].substring(1, messageToBot[1].length());
             Patty.setUserInput(messageToBot[1]);
             clientOutput = new DataOutputStream(s.getOutputStream());
             clientOutput.writeBytes("Chatty Patty: " + Patty.getMessage() + "\n");
-
+            }
             //write chattypatty's message here in this for loop
           }
         } else {
