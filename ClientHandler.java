@@ -54,7 +54,7 @@ public class ClientHandler implements Runnable {
             }
             // Generate a random nuber between 0 and 1
             Random generator = new Random();
-            double number = generator.nextDouble() * 1;
+            double number = generator.nextDouble();
             // If random number is gretaer than 0.05 execute the Bot code
             if (number >= 0.05) {
             String[] messageToBot = clientText.split(":", 2);
