@@ -1,5 +1,5 @@
 hello - Hi there! How are you?
 good - That's good to hear!
-what is your name? - My name is ChatBot
+what is your name? - My name is Patty
 help - Enter input into the console and receive a response.
 bye - Goodbye!
