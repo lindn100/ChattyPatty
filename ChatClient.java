@@ -36,26 +36,30 @@ public class ChatClient {
       Scanner keyboard = new Scanner(System.in);
       System.out.print("Please enter a Username: ");
       String userName = keyboard.nextLine();
-      System.out.println("Welcome, " + userName);
       String hostname = "localhost";
       int port = 7654;
 
-      System.out.println("Connecting to server on port " + port);
+    //  System.out.println("Connecting to server on port " + port);
       Socket connectionSock = new Socket(hostname, port);
 
       DataOutputStream serverOutput = new DataOutputStream(connectionSock.getOutputStream());
 
-      System.out.println("Connection made.");
+      System.out.println("Connection made.\n");
 
       // Start a thread to listen and display data sent by the server
       ClientListener listener = new ClientListener(connectionSock);
       Thread theThread = new Thread(listener);
       theThread.start();
-
+      boolean firstPass = true;
       // Read input from the keyboard and send it to everyone else.
       // The only way to quit is to hit control-c, but a quit command
       // could easily be added.
       while (true) {
+        if(firstPass)
+        {
+            serverOutput.writeBytes(userName + "\n");
+            firstPass = false;
+        }
         String data = userName + ": " + keyboard.nextLine();
         serverOutput.writeBytes(data + "\n");
 

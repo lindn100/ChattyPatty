@@ -38,6 +38,12 @@ public class ClientHandler implements Runnable {
       System.out.println("Connection made with socket " + connectionSock);
       BufferedReader clientInput = new BufferedReader(
           new InputStreamReader(connectionSock.getInputStream()));
+      String userName = clientInput.readLine();
+      for (Socket s : socketList) {
+        DataOutputStream clientOutput;
+        clientOutput = new DataOutputStream(s.getOutputStream());
+        clientOutput.writeBytes("Patty: " + userName + " has joined the chatroom. Everyone say hello to them!\n");
+      }
       while (true) {
         // Get data sent from a client
         String clientText = clientInput.readLine();
@@ -46,16 +52,16 @@ public class ClientHandler implements Runnable {
           // Turn around and output this data
           // to all other clients except the one
           // that sent us this information
+          // Generate a random number between 0 and 1
+          Random generator = new Random();
+          double number = generator.nextDouble();
+          // If random number is gretaer than 0.5 execute the Bot code
           for (Socket s : socketList) {
             DataOutputStream clientOutput;
             if (s != connectionSock) {
               clientOutput = new DataOutputStream(s.getOutputStream());
               clientOutput.writeBytes(clientText + "\n");
             }
-            // Generate a random nuber between 0 and 1
-            Random generator = new Random();
-            double number = generator.nextDouble();
-            // If random number is gretaer than 0.5 execute the Bot code
             if (number >= 0.5) {
             String[] messageToBot = clientText.split(":", 2);
             messageToBot[1] = messageToBot[1].substring(1, messageToBot[1].length());
