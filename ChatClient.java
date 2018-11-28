@@ -39,7 +39,7 @@ public class ChatClient {
       String hostname = "172.17.0.2";
       int port = 7654;
 
-    //  System.out.println("Connecting to server on port " + port);
+      //System.out.println("Connecting to server on port " + port);
       Socket connectionSock = new Socket(hostname, port);
 
       DataOutputStream serverOutput = new DataOutputStream(connectionSock.getOutputStream());
@@ -55,10 +55,9 @@ public class ChatClient {
       // The only way to quit is to hit control-c, but a quit command
       // could easily be added.
       while (true) {
-        if(firstPass)
-        {
-            serverOutput.writeBytes(userName + "\n");
-            firstPass = false;
+        if (firstPass) {
+          serverOutput.writeBytes(userName + "\n");
+          firstPass = false;
         }
         String data = userName + ": " + keyboard.nextLine();
         serverOutput.writeBytes(data + "\n");
