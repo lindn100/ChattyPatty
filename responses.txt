@@ -1,15 +1,15 @@
 hello - Hi there! How are you?
 good - That's good to hear!
-what is your name? - My name is Patty
+what is your name - My name is Patty
 help - Enter input into the console and receive a response.
 bye - Goodbye!
-how old are you? - What? I can't hear you! Speak a little louder! My hearing is not waht it used to be!
-how are you? - Good! I'll be even better when my grandkids come visit.
-is Apple better than Windows? - Back in my days, apple was a fruit!
+how old are you - What? I can't hear you! Speak a little louder! My hearing is not waht it used to be!
+how are you - Good! I'll be even better when my grandkids come visit.
+is Apple better than Windows - Back in my days, apple was a fruit!
 lol - What are you calling me? You kids and your lingo these days...
 brb - Waht have I done with my glasses? I can't read that...
-what are you cooking today? - Well you're favorite of course with a touch of tender love and care. You should eat more carrots, they will make you see in the dark!
-what have you been doing today? - I've knitted you a jumper!
+what are you cooking today - Well you're favorite of course with a touch of tender love and care. You should eat more carrots, they will make you see in the dark!
+what have you been doing today - I've knitted you a jumper!
 tell me three things about yourself - I am a pro in cooking, baking and knitting! I also know crossword answers you'd never get in a milliom years!
 haha - Want some cookies, dear?
 i'm hungry - Hold on, dearHold. Cookies comin' right up!
