@@ -14,19 +14,19 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class ClientHandler implements Runnable {
   private Socket connectionSock = null;
   private ArrayList<Socket> socketList;
-  private ChattyPatty Patty;
+  private ChattyPatty patty;
 
   ClientHandler(Socket sock, ArrayList<Socket> socketList) {
     this.connectionSock = sock;
     this.socketList = socketList;  // Keep reference to master list
-    Patty = new ChattyPatty();
+    patty = new ChattyPatty();
   }
 
   /**
@@ -42,7 +42,8 @@ public class ClientHandler implements Runnable {
       for (Socket s : socketList) {
         DataOutputStream clientOutput;
         clientOutput = new DataOutputStream(s.getOutputStream());
-        clientOutput.writeBytes("Patty: " + userName + " has joined the chatroom. Everyone say hello to them!\n");
+        clientOutput.writeBytes("Patty: " + userName
+            + " has joined the chatroom. Everyone say hello to them!\n");
       }
       while (true) {
         // Get data sent from a client
@@ -63,11 +64,16 @@ public class ClientHandler implements Runnable {
               clientOutput.writeBytes(clientText + "\n");
             }
             if (number >= 0.5) {
-            String[] messageToBot = clientText.split(":", 2);
-            messageToBot[1] = messageToBot[1].substring(1, messageToBot[1].length());
-            Patty.setUserInput(messageToBot[1]);
-            clientOutput = new DataOutputStream(s.getOutputStream());
-            clientOutput.writeBytes("Chatty Patty: " + Patty.getMessage() + "\n");
+              if (clientText.substring(clientText.length() - 1).equals("!")
+                  || clientText.substring(clientText.length() - 1).equals(".")
+                  || clientText.substring(clientText.length() - 1).equals("?"))  {
+                clientText = clientText.substring(0, clientText.length() - 1);
+              }
+              String[] messageToBot = clientText.split(":", 2);
+              messageToBot[1] = messageToBot[1].substring(1, messageToBot[1].length());
+              patty.setUserInput(messageToBot[1]);
+              clientOutput = new DataOutputStream(s.getOutputStream());
+              clientOutput.writeBytes("Chatty Patty: " + patty.getMessage() + "\n");
             }
             //write chattypatty's message here in this for loop
           }

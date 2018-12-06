@@ -36,7 +36,7 @@ public class ChatClient {
       Scanner keyboard = new Scanner(System.in);
       System.out.print("Please enter a Username: ");
       String userName = keyboard.nextLine();
-      String hostname = "172.17.0.2";
+      String hostname = "localhost";
       int port = 7654;
 
       //System.out.println("Connecting to server on port " + port);
