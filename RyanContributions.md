@@ -7,3 +7,5 @@
 (11.27) Added a welcome message from Patty sent to every user whenever a new user connects to the server. Fixed a bug where Patty would send messages to only some users. Added more responses to Patty's pool. Passes checkstyle. Attempted to make a dockerfile for client and server, but have run into some issues and need help from Prof. Fahy. Created presentation poster.
 
 (12.5) Modified the chatbot's perception of incoming messages by checking if the incoming message has punctuation at the end, and if so, removes it for the purpose of parsing the string and getting a correct response. This was implemented so that Hello! and Hello get the same response from the bot. However, the message is modified after its sent to all other users, so the user's original message is kept in-tact. It is only modified for parsing purposes for the bot.
+
+(12.6) Helped to add some more respones to Patty's response-pool.
