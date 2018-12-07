@@ -4,6 +4,6 @@
 
 (11.13) Added a random number generator to the ClienHandler.java file so that Patty does not respond to every messages sent in the chatroom. ClientHandler.java, passes checkstyle.
 
-(11.27) Added more responses from Patty to the reponses.txt file and worked on the poster design and content.
+(11.27) Added more responses from Patty to the responses.txt file and worked on the poster design and content.
 
-(12/6) Added more repsonses to the reposnses.txt so that we have a total of 50 responses from the bot and reomved all punctuation from the incoming messages Patty responds to.
+(12/6) Added more responses to the responses.txt so that we have a total of 50 responses from the bot and removed all punctuation from the incoming messages Patty responds to.
